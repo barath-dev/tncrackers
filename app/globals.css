@@ -128,8 +128,13 @@ a {
 
 @media (max-width: 900px) {
   .site-header__menu,
-  .site-header__phone {
+  .site-header__phone,
+  .site-header__enquire {
     display: none;
+  }
+
+  .site-header__inner {
+    gap: 12px;
   }
 
   .site-header__burger {
@@ -192,6 +197,15 @@ a {
   .hero__copy {
     max-width: none;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__copy h1.ant-typography,
+  .category-banner__content h1.ant-typography,
+  .page-banner h1.ant-typography {
+    font-size: 28px;
+    line-height: 1.25;
   }
 }
 
@@ -408,6 +422,50 @@ a {
   border: 1px solid var(--color-parchment-line);
 }
 
+/* Category filter — inline list on tablet/desktop, a horizontal
+   scrolling chip strip on mobile so it doesn't push the product grid
+   below the fold. */
+.category-chips {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .category-filter--desktop {
+    display: none;
+  }
+
+  .category-chips {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .category-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-chip {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--color-parchment-line);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .category-chip--active {
+    background: var(--color-ember);
+    border-color: var(--color-ember);
+    color: #fff;
+  }
+}
+
 /* Footer */
 .site-footer {
   background: var(--color-ink);
@@ -617,6 +675,41 @@ a {
   min-width: 72px;
   text-align: right;
   flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .cart-line {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    grid-template-areas:
+      "photo info delete"
+      "qty qty total";
+    align-items: center;
+    gap: 8px 12px;
+  }
+
+  .cart-line__photo {
+    grid-area: photo;
+    width: 56px;
+    height: 56px;
+  }
+
+  .cart-line__info {
+    grid-area: info;
+    min-width: 0;
+  }
+
+  .cart-line__qty {
+    grid-area: qty;
+  }
+
+  .cart-line__total {
+    grid-area: total;
+  }
+
+  .cart-line__delete {
+    grid-area: delete;
+  }
 }
 
 .cart-summary__row {

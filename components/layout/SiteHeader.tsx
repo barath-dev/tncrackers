@@ -67,7 +67,7 @@ export default function SiteHeader() {
               <Button icon={<ShoppingCartOutlined />} shape="circle" />
             </Badge>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" className="site-header__enquire">
             <Button type="primary">Enquire Now</Button>
           </Link>
           <Button
@@ -84,6 +84,7 @@ export default function SiteHeader() {
         placement="right"
         onClose={() => setDrawerOpen(false)}
         open={drawerOpen}
+        width={300}
       >
         <Menu
           mode="inline"

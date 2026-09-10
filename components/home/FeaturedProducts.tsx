@@ -18,9 +18,9 @@ export default function FeaturedProducts() {
         </Paragraph>
       </div>
       <Row gutter={[20, 20]}>
-        {products.map((product) => (
+        {products.map((product, index) => (
           <Col xs={24} sm={12} md={8} lg={6} key={product.id}>
-            <ProductCard product={product} />
+            <ProductCard product={product} priority={index < 4} />
           </Col>
         ))}
       </Row>

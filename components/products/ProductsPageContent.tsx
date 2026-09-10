@@ -28,9 +28,9 @@ export default function ProductsPageContent() {
           </Col>
           <Col xs={24} md={18}>
             <Row gutter={[20, 20]}>
-              {products.map((product) => (
+              {products.map((product, index) => (
                 <Col xs={24} sm={12} lg={8} key={product.id}>
-                  <ProductCard product={product} />
+                  <ProductCard product={product} priority={index < 3} />
                 </Col>
               ))}
             </Row>

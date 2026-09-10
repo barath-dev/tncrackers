@@ -11,7 +11,14 @@ import EnquiryForm from "@/components/contact/EnquiryForm";
 
 const { Text, Paragraph } = Typography;
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({
+  product,
+  priority = false,
+}: {
+  product: Product;
+  /** Set for the first few cards above the fold to improve LCP. */
+  priority?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const discountPercent = Math.round(
     ((product.price - product.discountPrice) / product.price) * 100
@@ -38,6 +45,7 @@ export default function ProductCard({ product }: { product: Product }) {
               src={category.image}
               alt={product.name}
               fill
+              priority={priority}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           )}

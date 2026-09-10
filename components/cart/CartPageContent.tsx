@@ -76,6 +76,7 @@ export default function CartPageContent() {
                     <Text strong>₹{line.lineTotal}</Text>
                   </div>
                   <Button
+                    className="cart-line__delete"
                     type="text"
                     danger
                     icon={<DeleteOutlined />}
