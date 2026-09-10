@@ -127,10 +127,14 @@ a {
 }
 
 @media (max-width: 900px) {
+  /* !important: Ant Design's own Menu overflow CSS (.ant-menu-horizontal)
+     is injected via cssinjs and can land after this stylesheet in the
+     cascade, at equal specificity — without this, "display: none" here
+     was losing and the horizontal menu stayed visible on mobile. */
   .site-header__menu,
   .site-header__phone,
   .site-header__enquire {
-    display: none;
+    display: none !important;
   }
 
   .site-header__inner {
