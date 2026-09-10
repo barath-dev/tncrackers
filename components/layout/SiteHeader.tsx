@@ -46,7 +46,7 @@ export default function SiteHeader() {
     <Header className="site-header">
       <div className="site-header__inner">
         <Link href="/" className="site-header__logo">
-          <Typography.Title level={3} style={{ margin: 0, color: "#B3122A" }}>
+          <Typography.Title level={3} style={{ margin: 0, color: "var(--color-ink)" }}>
             {siteName}
           </Typography.Title>
         </Link>

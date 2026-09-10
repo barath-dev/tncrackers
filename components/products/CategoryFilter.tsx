@@ -18,7 +18,7 @@ export default function CategoryFilter({ activeSlug }: { activeSlug?: string }) 
       mode="inline"
       items={items}
       selectedKeys={[activeSlug ?? "all"]}
-      style={{ borderRadius: 12, border: "1px solid #f0e4d8" }}
+      style={{ borderRadius: 12, border: "1px solid var(--color-parchment-line)" }}
     />
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { MessageOutlined, MinusOutlined, PlusOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { App, Badge, Button, Card, Modal, Space, Typography } from "antd";
+import { App, Button, Card, Modal, Space, Typography } from "antd";
 import Image from "next/image";
 import { useState } from "react";
 import { getCategoryBySlug } from "@/lib/data/categories";
@@ -57,6 +57,11 @@ export default function ProductCard({ product }: { product: Product }) {
           ₹{product.discountPrice}
         </Text>
         <del>₹{product.price}</del>
+        {product.badge ? (
+          <span className="tag tag--plum">{product.badge}</span>
+        ) : (
+          <span className="tag tag--ember">{discountPercent}% off</span>
+        )}
       </div>
       <Space.Compact block style={{ marginTop: 12 }}>
         {quantityInCart > 0 ? (
@@ -95,10 +100,7 @@ export default function ProductCard({ product }: { product: Product }) {
   );
 
   return (
-    <Badge.Ribbon
-      text={product.badge ?? `${discountPercent}% off`}
-      color={product.badge ? "#D4AF37" : "#B3122A"}
-    >
+    <>
       {card}
       <Modal
         title={`Enquire about ${product.name}`}
@@ -112,6 +114,6 @@ export default function ProductCard({ product }: { product: Product }) {
           onSubmitted={() => setOpen(false)}
         />
       </Modal>
-    </Badge.Ribbon>
+    </>
   );
 }

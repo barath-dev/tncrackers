@@ -1,6 +1,20 @@
 :root {
-  --font-heading: var(--font-heading, "Poppins", sans-serif);
+  --font-heading: var(--font-heading, "Fraunces", serif);
   --font-body: var(--font-body, "Inter", sans-serif);
+
+  /* Palette — mirrors the literal values in lib/theme.ts. Update both
+     places together. "The moment just after a shell bursts": an ink
+     night sky, one burnt-ember accent, a cooler afterglow violet, and
+     antique brass — not the usual bright red/gold festival-sale look. */
+  --color-ink: #17141c;
+  --color-ember: #b54b1f;
+  --color-ember-deep: #8f3814;
+  --color-plum: #5b3e6b;
+  --color-brass: #a9863c;
+  --color-parchment: #f3ebdd;
+  --color-parchment-line: #e4d7c2;
+  --color-ash: #6b6058;
+  --color-success: #4b7a5b;
 }
 
 * {
@@ -19,8 +33,8 @@ body {
 
 body {
   font-family: var(--font-body);
-  background: #fbf7f2;
-  color: #1a1015;
+  background: var(--color-parchment);
+  color: var(--color-ink);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -38,6 +52,7 @@ h4,
 .ant-typography h3,
 .ant-typography h4 {
   font-family: var(--font-heading);
+  font-weight: 600;
 }
 
 a {
@@ -61,7 +76,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  box-shadow: 0 2px 8px rgba(26, 16, 21, 0.06);
+  box-shadow: 0 1px 0 var(--color-parchment-line);
   height: 72px;
   line-height: normal;
 }
@@ -120,7 +135,7 @@ a {
   min-height: 560px;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #6c0d1f 0%, #b3122a 55%, #d4552f 100%);
+  background: var(--color-ink);
   color: #fff;
 }
 
@@ -135,10 +150,10 @@ a {
   z-index: 0;
   background: linear-gradient(
     100deg,
-    rgba(26, 7, 12, 0.92) 0%,
-    rgba(108, 13, 31, 0.78) 38%,
-    rgba(179, 18, 42, 0.35) 68%,
-    rgba(179, 18, 42, 0.15) 100%
+    rgba(23, 20, 28, 0.94) 0%,
+    rgba(23, 20, 28, 0.8) 38%,
+    rgba(23, 20, 28, 0.4) 68%,
+    rgba(23, 20, 28, 0.18) 100%
   );
 }
 
@@ -153,14 +168,6 @@ a {
 
 .hero__copy {
   max-width: 520px;
-}
-
-.hero__eyebrow {
-  color: #ffd479;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 13px;
 }
 
 @media (max-width: 780px) {
@@ -197,22 +204,28 @@ a {
   margin: 0 auto 40px;
 }
 
+.section__header--left {
+  text-align: left;
+  max-width: 560px;
+  margin: 0 0 32px;
+}
+
 /* Category card */
 .category-card {
   height: 100%;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid #f0e4d8;
+  border: 1px solid var(--color-parchment-line);
 }
 
 .category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(179, 18, 42, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(23, 20, 28, 0.1);
 }
 
 .category-card__icon {
   font-size: 32px;
-  color: #b3122a;
+  color: var(--color-ember);
   margin-bottom: 12px;
 }
 
@@ -220,17 +233,17 @@ a {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: #f0e4d8;
+  background: var(--color-parchment-line);
   overflow: hidden;
 }
 
 .category-card__photo img {
   object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease;
 }
 
 .category-card:hover .category-card__photo img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 .category-card__badge {
@@ -241,12 +254,12 @@ a {
   height: 34px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.92);
-  color: #b3122a;
+  color: var(--color-ember);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  box-shadow: 0 2px 6px rgba(26, 16, 21, 0.18);
+  box-shadow: 0 2px 6px rgba(23, 20, 28, 0.2);
 }
 
 /* Product card */
@@ -258,37 +271,62 @@ a {
 .product-card__cover {
   position: relative;
   height: 160px;
-  background: #f0e4d8;
+  background: var(--color-parchment-line);
   overflow: hidden;
 }
 
 .product-card__cover img {
   object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease;
 }
 
 .product-card:hover .product-card__cover img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 .product-card__price {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .product-card__price del {
-  color: #9a8f88;
+  color: var(--color-ash);
   font-size: 13px;
 }
 
 .product-card__qty {
   min-width: 40px;
-  color: #1a1015 !important;
+  color: var(--color-ink) !important;
   font-weight: 600;
   cursor: default !important;
   opacity: 1 !important;
   pointer-events: none;
+}
+
+/* Quiet inline tag — replaces a diagonal ribbon badge on every card.
+   Meaning carries the color: ember for a discount, plum for a named
+   editorial pick (e.g. "Bestseller"). */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+.tag--ember {
+  color: var(--color-ember-deep);
+  background: rgba(181, 75, 31, 0.1);
+}
+
+.tag--plum {
+  color: var(--color-plum);
+  background: rgba(91, 62, 107, 0.1);
 }
 
 /* Why choose us */
@@ -296,12 +334,13 @@ a {
   text-align: center;
   height: 100%;
   border: none;
-  background: #fff5ec;
+  background: #fff;
+  border: 1px solid var(--color-parchment-line);
 }
 
 /* Footer */
 .site-footer {
-  background: #1a1015;
+  background: var(--color-ink);
   color: rgba(255, 255, 255, 0.75);
   padding: 56px 24px 24px;
 }
@@ -321,7 +360,7 @@ a {
 }
 
 .site-footer__link:hover {
-  color: #ffd479;
+  color: var(--color-brass);
 }
 
 .site-footer__social {
@@ -344,8 +383,8 @@ a {
 
 /* Page header banner (About/Products/Contact) */
 .page-banner {
-  background: #fff5ec;
-  border-bottom: 1px solid #f0e4d8;
+  background: #fff;
+  border-bottom: 1px solid var(--color-parchment-line);
   padding: 48px 24px;
   text-align: center;
 }
@@ -359,7 +398,7 @@ a {
   justify-content: center;
   overflow: hidden;
   color: #fff;
-  background: #1a1015;
+  background: var(--color-ink);
 }
 
 .category-banner__photo {
@@ -373,8 +412,8 @@ a {
   z-index: 0;
   background: linear-gradient(
     180deg,
-    rgba(26, 16, 21, 0.75) 0%,
-    rgba(108, 13, 31, 0.72) 100%
+    rgba(23, 20, 28, 0.7) 0%,
+    rgba(23, 20, 28, 0.78) 100%
   );
 }
 
@@ -394,32 +433,42 @@ a {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  color: #6c0d1f;
+  color: var(--color-ember-deep);
 }
 
 .page-loader__label {
   font-weight: 600;
-  color: #8a6a5a;
+  color: var(--color-ash);
 }
 
 /* Skeleton loading grids (products loading states) */
 .skeleton-banner {
   height: 260px;
-  background: linear-gradient(90deg, #f0e4d8 25%, #f7ece0 37%, #f0e4d8 63%);
+  background: linear-gradient(
+    90deg,
+    var(--color-parchment-line) 25%,
+    #f7f0e4 37%,
+    var(--color-parchment-line) 63%
+  );
   background-size: 400% 100%;
   animation: shimmer 1.4s ease infinite;
 }
 
 .skeleton-card {
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #f0e4d8;
+  border: 1px solid var(--color-parchment-line);
   background: #fff;
 }
 
 .skeleton-card__photo {
   aspect-ratio: 4 / 3;
-  background: linear-gradient(90deg, #f0e4d8 25%, #f7ece0 37%, #f0e4d8 63%);
+  background: linear-gradient(
+    90deg,
+    var(--color-parchment-line) 25%,
+    #f7f0e4 37%,
+    var(--color-parchment-line) 63%
+  );
   background-size: 400% 100%;
   animation: shimmer 1.4s ease infinite;
 }
@@ -432,7 +481,12 @@ a {
   height: 12px;
   border-radius: 6px;
   margin-bottom: 10px;
-  background: linear-gradient(90deg, #f0e4d8 25%, #f7ece0 37%, #f0e4d8 63%);
+  background: linear-gradient(
+    90deg,
+    var(--color-parchment-line) 25%,
+    #f7f0e4 37%,
+    var(--color-parchment-line) 63%
+  );
   background-size: 400% 100%;
   animation: shimmer 1.4s ease infinite;
 }
@@ -450,30 +504,7 @@ a {
   }
 }
 
-/* Gentle entrance for route content */
-.hero,
-.section,
-.page-banner,
-.category-banner {
-  animation: fadeInUp 0.4s ease both;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero,
-  .section,
-  .page-banner,
-  .category-banner,
   .skeleton-banner,
   .skeleton-card__photo,
   .skeleton-line {
@@ -494,9 +525,9 @@ a {
   width: 72px;
   height: 72px;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  background: #f0e4d8;
+  background: var(--color-parchment-line);
 }
 
 .cart-line__photo img {
@@ -526,7 +557,7 @@ a {
 
 .cart-summary__row--total {
   padding-top: 8px;
-  border-top: 1px dashed #f0e4d8;
+  border-top: 1px dashed var(--color-parchment-line);
   margin-top: 4px;
 }
 

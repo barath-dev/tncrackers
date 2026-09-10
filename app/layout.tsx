@@ -1,6 +1,6 @@
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import { Layout } from "antd";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
@@ -9,10 +9,11 @@ import BackToTop from "@/components/ui/BackToTop";
 import { siteName } from "@/lib/theme";
 import "./globals.css";
 
-const heading = Poppins({
+const heading = Fraunces({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
 });
 
 const body = Inter({

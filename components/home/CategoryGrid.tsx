@@ -10,10 +10,12 @@ const { Title, Paragraph, Text } = Typography;
 export default function CategoryGrid() {
   return (
     <section className="section">
-      <div className="section__header">
-        <Title level={2}>Shop by Category</Title>
-        <Paragraph type="secondary">
-          Fifteen curated categories covering every kind of festival fireworks display.
+      <div className="section__header--left">
+        <Title level={2} style={{ marginBottom: 4 }}>
+          Shop by category
+        </Title>
+        <Paragraph type="secondary" style={{ marginBottom: 0 }}>
+          Fifteen categories, from a single sparkler to a full family combo.
         </Paragraph>
       </div>
       <Row gutter={[20, 20]}>

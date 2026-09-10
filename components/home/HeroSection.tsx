@@ -22,8 +22,7 @@ export default function HeroSection() {
       <div className="hero__scrim" />
       <div className="hero__inner">
         <div className="hero__copy">
-          <span className="hero__eyebrow">Festival Fireworks Catalogue</span>
-          <Title level={1} style={{ color: "#fff", marginTop: 12 }}>
+          <Title level={1} style={{ color: "#fff", marginTop: 0 }}>
             Celebrate every occasion with {siteName}
           </Title>
           <Paragraph style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, maxWidth: 480 }}>

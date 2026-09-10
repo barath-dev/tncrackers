@@ -100,7 +100,7 @@ export default function CartPageContent() {
               </div>
               <div className="cart-summary__row">
                 <Text type="secondary">You Save</Text>
-                <Text style={{ color: "#2e7d32" }}>−₹{savings}</Text>
+                <Text style={{ color: "var(--color-success)" }}>−₹{savings}</Text>
               </div>
               <div className="cart-summary__row cart-summary__row--total">
                 <Text strong>Total</Text>
