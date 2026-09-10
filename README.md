@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TNCrackers
 
-## Getting Started
+A professional, frontend-only portfolio site for a festival fireworks
+catalogue, built with **Next.js (App Router)**, **TypeScript**, and
+**Ant Design**.
 
-First, run the development server:
+This project is a from-scratch redesign inspired by the general category
+structure of online fireworks catalogues — all copy, product data, pricing,
+and artwork in this repository are original and were created for this
+project (no content or images were copied from any third-party site).
+
+## Features
+
+- Home page with hero banner, category showcase, and bestseller highlights
+- Full product catalogue across 15 categories (`/products`,
+  `/products/[category]`) with mock/static data
+- About and Contact pages, including an "Enquiry" form (Ant Design `Form`,
+  client-side validation only — no backend is wired up)
+- Ant Design theming via `ConfigProvider`, SSR-safe via
+  `@ant-design/nextjs-registry`
+- Fully responsive (mobile nav drawer, responsive grids)
+
+## Tech stack
+
+- [Next.js](https://nextjs.org) 16 (App Router, Turbopack)
+- React 19 + TypeScript
+- [Ant Design](https://ant.design) 5 (`antd`, `@ant-design/icons`)
+- `@ant-design/nextjs-registry` for App Router SSR style extraction
+- `@ant-design/v5-patch-for-react-19` for React 19 compatibility
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm build   # production build
+pnpm start   # run the production build
+pnpm lint    # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+app/                     Routes (Next.js App Router)
+components/
+  layout/                Header, footer, site chrome
+  home/                  Home page sections
+  products/              Product listing, filters, product card
+  contact/               Enquiry form
+  about/                 About page content
+lib/
+  data/                  Static category & product data (mock content)
+  theme.ts               Ant Design theme tokens, placeholder contact info
+public/illustrations/    Original SVG artwork
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Notes for going live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Contact details** in `lib/theme.ts` (`contactDetails`) are placeholders
+  — replace with the real business phone, email, and address before launch.
+- **Product data** in `lib/data/products.ts` and `lib/data/categories.ts` is
+  illustrative — replace with the real catalogue.
+- **The enquiry form** currently only simulates a submission client-side;
+  wire it up to a real backend/email service before launch.
+- Firework sale and use is regulated in most regions — confirm the
+  compliance copy in `app/about` and the footer against current local
+  regulations before publishing.

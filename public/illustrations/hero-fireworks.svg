@@ -1,0 +1,55 @@
+<svg width="480" height="420" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of fireworks bursting over a night sky">
+  <defs>
+    <radialGradient id="burstGold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE8A3" />
+      <stop offset="60%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="burstPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD1DC" />
+      <stop offset="60%" stop-color="#FF6F91" />
+      <stop offset="100%" stop-color="#FF6F91" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="burstBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#CFE8FF" />
+      <stop offset="60%" stop-color="#4FA6E8" />
+      <stop offset="100%" stop-color="#4FA6E8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="150" cy="140" r="120" fill="url(#burstGold)" />
+  <circle cx="330" cy="230" r="140" fill="url(#burstPink)" />
+  <circle cx="260" cy="90" r="90" fill="url(#burstBlue)" />
+
+  <g stroke="#FFE8A3" stroke-width="2" stroke-linecap="round" opacity="0.9">
+    <line x1="150" y1="140" x2="150" y2="40" />
+    <line x1="150" y1="140" x2="230" y2="70" />
+    <line x1="150" y1="140" x2="70" y2="70" />
+    <line x1="150" y1="140" x2="60" y2="150" />
+    <line x1="150" y1="140" x2="150" y2="240" />
+    <line x1="150" y1="140" x2="230" y2="200" />
+    <line x1="150" y1="140" x2="70" y2="210" />
+  </g>
+
+  <g stroke="#FFD1DC" stroke-width="2" stroke-linecap="round" opacity="0.85">
+    <line x1="330" y1="230" x2="330" y2="120" />
+    <line x1="330" y1="230" x2="420" y2="170" />
+    <line x1="330" y1="230" x2="440" y2="230" />
+    <line x1="330" y1="230" x2="420" y2="300" />
+    <line x1="330" y1="230" x2="330" y2="350" />
+    <line x1="330" y1="230" x2="240" y2="300" />
+    <line x1="330" y1="230" x2="230" y2="230" />
+    <line x1="330" y1="230" x2="240" y2="170" />
+  </g>
+
+  <g fill="#FFFFFF" opacity="0.9">
+    <circle cx="60" cy="60" r="2.5" />
+    <circle cx="420" cy="60" r="2" />
+    <circle cx="440" cy="360" r="2.5" />
+    <circle cx="30" cy="330" r="2" />
+    <circle cx="200" cy="20" r="2" />
+    <circle cx="400" cy="380" r="2" />
+  </g>
+
+  <path d="M0 420 L0 380 Q 90 340 180 375 T 360 370 T 480 385 L480 420 Z" fill="#2A0F17" opacity="0.55" />
+</svg>
