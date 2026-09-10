@@ -27,9 +27,7 @@ export default function ContactPageContent() {
                   <Text strong>
                     <PhoneOutlined /> Phone
                   </Text>
-                  <Text type="secondary">
-                    {contactDetails.phonePrimary} · {contactDetails.phoneSecondary}
-                  </Text>
+                  <Text type="secondary">{contactDetails.phonePrimary}</Text>
 
                   <Text strong>
                     <MailOutlined /> Email
@@ -48,9 +46,8 @@ export default function ContactPageContent() {
                 </Space>
               </Card>
               <Paragraph type="secondary" style={{ fontSize: 13 }}>
-                Contact details shown here are placeholders for this
-                portfolio build — replace them with real business details
-                before launch.
+                The street address above is a placeholder — replace it with
+                the exact business address before launch.
               </Paragraph>
             </Space>
           </Col>

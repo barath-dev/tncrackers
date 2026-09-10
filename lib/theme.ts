@@ -33,10 +33,9 @@ export const theme: ThemeConfig = {
 };
 
 export const contactDetails = {
-  phonePrimary: "+91 90000 00000",
-  phoneSecondary: "+91 90000 00001",
-  email: "info@tncrackers.example.com",
-  whatsapp: "+91 90000 00000",
+  phonePrimary: "+91 97878 75717",
+  email: "barathwaj1153@gmail.com",
+  whatsapp: "+91 97878 75717",
   address: "Fireworks Market Road, Sivakasi, Virudhunagar District, Tamil Nadu, India",
-  hours: "Open daily · 9:00 AM – 8:00 PM",
+  hours: "Mon–Sat · 9:00 AM – 5:00 PM",
 };

@@ -92,8 +92,8 @@ export default function SiteFooter() {
       </Paragraph>
 
       <Text className="site-footer__muted">
-        © {year} {siteName}. All rights reserved. Contact details on this
-        demo site are placeholders.
+        © {year} {siteName}. All rights reserved. The street address shown
+        is a placeholder.
       </Text>
     </Footer>
   );

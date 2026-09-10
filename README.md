@@ -55,14 +55,15 @@ components/
   about/                 About page content
 lib/
   data/                  Static category & product data (mock content)
-  theme.ts               Ant Design theme tokens, placeholder contact info
+  theme.ts               Ant Design theme tokens, contact info
 public/illustrations/    Original SVG artwork
 ```
 
 ## Notes for going live
 
-- **Contact details** in `lib/theme.ts` (`contactDetails`) are placeholders
-  — replace with the real business phone, email, and address before launch.
+- **Contact details** in `lib/theme.ts` (`contactDetails`) use a real phone
+  number and email, but the street **address** is still a placeholder —
+  replace it before launch.
 - **Product data** in `lib/data/products.ts` and `lib/data/categories.ts` is
   illustrative — replace with the real catalogue.
 - **The enquiry form** currently only simulates a submission client-side;
