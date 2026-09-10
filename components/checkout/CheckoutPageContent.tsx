@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingOutlined } from "@ant-design/icons";
+import { CheckCircleFilled, ShoppingOutlined } from "@ant-design/icons";
 import {
   Button,
   Card,
@@ -57,6 +57,7 @@ export default function CheckoutPageContent() {
       <div className="section">
         <Result
           status="success"
+          icon={<CheckCircleFilled style={{ color: "var(--color-success)" }} />}
           title="Order placed!"
           subTitle={
             <>
