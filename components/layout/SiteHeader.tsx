@@ -1,11 +1,12 @@
 "use client";
 
-import { MenuOutlined, PhoneOutlined } from "@ant-design/icons";
-import { Button, Drawer, Layout, Menu, Space, Typography } from "antd";
+import { MenuOutlined, PhoneOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Badge, Button, Drawer, Layout, Menu, Space, Typography } from "antd";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
 import { categories } from "@/lib/data/categories";
+import { useCart } from "@/lib/cart/CartContext";
 import { contactDetails, siteName } from "@/lib/theme";
 
 const { Header } = Layout;
@@ -33,6 +34,7 @@ export default function SiteHeader() {
   const pathname = usePathname();
   const items = useNavItems();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const { itemCount } = useCart();
 
   const selectedKey = pathname.startsWith("/products")
     ? "/products"
@@ -60,6 +62,11 @@ export default function SiteHeader() {
           <a href={`tel:${contactDetails.phonePrimary.replace(/\s/g, "")}`} className="site-header__phone">
             <PhoneOutlined /> {contactDetails.phonePrimary}
           </a>
+          <Link href="/cart" aria-label={`Cart, ${itemCount} item${itemCount === 1 ? "" : "s"}`}>
+            <Badge count={itemCount} size="small" offset={[-2, 2]}>
+              <Button icon={<ShoppingCartOutlined />} shape="circle" />
+            </Badge>
+          </Link>
           <Link href="/contact">
             <Button type="primary">Enquire Now</Button>
           </Link>
@@ -84,11 +91,18 @@ export default function SiteHeader() {
           selectedKeys={[selectedKey]}
           onClick={() => setDrawerOpen(false)}
         />
-        <Link href="/contact" onClick={() => setDrawerOpen(false)}>
-          <Button type="primary" block style={{ marginTop: 16 }}>
-            Enquire Now
-          </Button>
-        </Link>
+        <Space direction="vertical" style={{ width: "100%", marginTop: 16 }}>
+          <Link href="/cart" onClick={() => setDrawerOpen(false)}>
+            <Button icon={<ShoppingCartOutlined />} block>
+              View Cart {itemCount > 0 ? `(${itemCount})` : ""}
+            </Button>
+          </Link>
+          <Link href="/contact" onClick={() => setDrawerOpen(false)}>
+            <Button type="primary" block>
+              Enquire Now
+            </Button>
+          </Link>
+        </Space>
       </Drawer>
     </Header>
   );

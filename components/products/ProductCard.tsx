@@ -1,38 +1,44 @@
 "use client";
 
-import { FireOutlined, MessageOutlined } from "@ant-design/icons";
-import { Badge, Button, Card, Modal, Typography } from "antd";
+import { MessageOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { App, Badge, Button, Card, Modal, Space, Typography } from "antd";
+import Image from "next/image";
 import { useState } from "react";
+import { getCategoryBySlug } from "@/lib/data/categories";
 import type { Product } from "@/lib/data/products";
+import { useCart } from "@/lib/cart/CartContext";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 
 const { Text, Paragraph } = Typography;
-
-const gradients = [
-  "linear-gradient(135deg, #B3122A, #D4552F)",
-  "linear-gradient(135deg, #6C0D1F, #B3122A)",
-  "linear-gradient(135deg, #D4552F, #D4AF37)",
-  "linear-gradient(135deg, #8C1030, #C4265A)",
-];
-
-function gradientFor(id: string) {
-  const index = id.split("").reduce((sum, ch) => sum + ch.charCodeAt(0), 0) % gradients.length;
-  return gradients[index];
-}
 
 export default function ProductCard({ product }: { product: Product }) {
   const [open, setOpen] = useState(false);
   const discountPercent = Math.round(
     ((product.price - product.discountPrice) / product.price) * 100
   );
+  const category = getCategoryBySlug(product.categorySlug);
+  const { addItem } = useCart();
+  const { message } = App.useApp();
+
+  const handleAddToCart = () => {
+    addItem(product.id, 1);
+    message.success(`Added "${product.name}" to cart`);
+  };
 
   const card = (
     <Card
       className="product-card"
       hoverable
       cover={
-        <div className="product-card__cover" style={{ background: gradientFor(product.id) }}>
-          <FireOutlined />
+        <div className="product-card__cover">
+          {category && (
+            <Image
+              src={category.image}
+              alt={product.name}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          )}
         </div>
       }
     >
@@ -50,15 +56,21 @@ export default function ProductCard({ product }: { product: Product }) {
         </Text>
         <del>₹{product.price}</del>
       </div>
-      <Button
-        type="primary"
-        icon={<MessageOutlined />}
-        block
-        style={{ marginTop: 12 }}
-        onClick={() => setOpen(true)}
-      >
-        Enquire
-      </Button>
+      <Space.Compact block style={{ marginTop: 12 }}>
+        <Button
+          type="primary"
+          icon={<ShoppingCartOutlined />}
+          style={{ flex: 1 }}
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </Button>
+        <Button
+          icon={<MessageOutlined />}
+          onClick={() => setOpen(true)}
+          aria-label={`Enquire about ${product.name}`}
+        />
+      </Space.Compact>
     </Card>
   );
 

@@ -5,6 +5,7 @@ import { Layout } from "antd";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import ThemeProvider from "@/components/providers/ThemeProvider";
+import BackToTop from "@/components/ui/BackToTop";
 import { siteName } from "@/lib/theme";
 import "./globals.css";
 
@@ -27,7 +28,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${heading.variable} ${body.variable}`}
+    >
       <body>
         <AntdRegistry>
           <ThemeProvider>
@@ -39,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   Turbopack's RSC client-reference handling. */}
               <main className="site-content">{children}</main>
               <SiteFooter />
+              <BackToTop />
             </Layout>
           </ThemeProvider>
         </AntdRegistry>

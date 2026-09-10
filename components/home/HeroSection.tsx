@@ -2,6 +2,7 @@
 
 import { MessageOutlined, ShopOutlined } from "@ant-design/icons";
 import { Button, Space, Typography } from "antd";
+import Image from "next/image";
 import Link from "next/link";
 import { siteName } from "@/lib/theme";
 
@@ -10,6 +11,15 @@ const { Title, Paragraph } = Typography;
 export default function HeroSection() {
   return (
     <section className="hero">
+      <Image
+        src="/images/wide/hero-fireworks.jpg"
+        alt="Colourful fireworks bursting over a night sky"
+        fill
+        priority
+        sizes="100vw"
+        className="hero__photo"
+      />
+      <div className="hero__scrim" />
       <div className="hero__inner">
         <div className="hero__copy">
           <span className="hero__eyebrow">Festival Fireworks Catalogue</span>
@@ -37,10 +47,6 @@ export default function HeroSection() {
               </Button>
             </Link>
           </Space>
-        </div>
-        <div className="hero__art">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/illustrations/hero-fireworks.svg" alt="Illustration of fireworks lighting up the night sky" width={480} height={420} />
         </div>
       </div>
     </section>

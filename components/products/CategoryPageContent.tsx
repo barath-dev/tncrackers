@@ -1,6 +1,7 @@
 "use client";
 
 import { Col, Empty, Row, Typography } from "antd";
+import Image from "next/image";
 import { getCategoryBySlug } from "@/lib/data/categories";
 import type { Product } from "@/lib/data/products";
 import CategoryFilter from "@/components/products/CategoryFilter";
@@ -25,16 +26,27 @@ export default function CategoryPageContent({
 
   return (
     <>
-      <div className="page-banner">
-        <div className="category-card__icon" style={{ display: "inline-block" }}>
-          <Icon />
+      <div className="category-banner">
+        <Image
+          src={category.banner}
+          alt={category.name}
+          fill
+          priority
+          sizes="100vw"
+          className="category-banner__photo"
+        />
+        <div className="category-banner__scrim" />
+        <div className="category-banner__content">
+          <div className="category-card__badge" style={{ position: "static", marginBottom: 12 }}>
+            <Icon />
+          </div>
+          <Title level={1} style={{ color: "#fff", marginBottom: 4 }}>
+            {category.name}
+          </Title>
+          <Paragraph style={{ color: "rgba(255,255,255,0.85)", maxWidth: 560, margin: "0 auto" }}>
+            {category.description}
+          </Paragraph>
         </div>
-        <Title level={1} style={{ marginBottom: 4 }}>
-          {category.name}
-        </Title>
-        <Paragraph type="secondary" style={{ maxWidth: 560, margin: "0 auto" }}>
-          {category.description}
-        </Paragraph>
       </div>
 
       <div className="section">
