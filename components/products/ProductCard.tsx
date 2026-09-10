@@ -1,7 +1,7 @@
 "use client";
 
-import { MessageOutlined, MinusOutlined, PlusOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { App, Button, Card, Modal, Space, Typography } from "antd";
+import { MessageOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
+import { App, Button, Card, Modal, Typography } from "antd";
 import Image from "next/image";
 import { useState } from "react";
 import { getCategoryBySlug } from "@/lib/data/categories";
@@ -41,19 +41,48 @@ export default function ProductCard({ product }: { product: Product }) {
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           )}
+          <div className="product-card__cta">
+            {quantityInCart > 0 ? (
+              <div className="qty-pill">
+                <button
+                  type="button"
+                  onClick={() => setQuantity(product.id, quantityInCart - 1)}
+                  aria-label={`Decrease quantity of ${product.name}`}
+                >
+                  <MinusOutlined />
+                </button>
+                <span>{quantityInCart}</span>
+                <button
+                  type="button"
+                  onClick={() => setQuantity(product.id, quantityInCart + 1)}
+                  aria-label={`Increase quantity of ${product.name}`}
+                >
+                  <PlusOutlined />
+                </button>
+              </div>
+            ) : (
+              <button type="button" className="add-pill" onClick={handleAddToCart}>
+                Add
+              </button>
+            )}
+          </div>
         </div>
       }
     >
-      <Card.Meta
-        title={product.name}
-        description={
-          <Paragraph type="secondary" ellipsis={{ rows: 2 }} style={{ marginBottom: 12 }}>
-            {product.description}
-          </Paragraph>
-        }
-      />
+      <div className="product-card__head">
+        <Paragraph strong ellipsis={{ rows: 1 }} style={{ marginBottom: 0, flex: 1 }}>
+          {product.name}
+        </Paragraph>
+        <Button
+          type="text"
+          size="small"
+          icon={<MessageOutlined />}
+          onClick={() => setOpen(true)}
+          aria-label={`Enquire about ${product.name}`}
+        />
+      </div>
       <div className="product-card__price">
-        <Text strong style={{ fontSize: 18 }}>
+        <Text strong style={{ fontSize: 17 }}>
           ₹{product.discountPrice}
         </Text>
         <del>₹{product.price}</del>
@@ -63,39 +92,6 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="tag tag--ember">{discountPercent}% off</span>
         )}
       </div>
-      <Space.Compact block style={{ marginTop: 12 }}>
-        {quantityInCart > 0 ? (
-          <Space.Compact style={{ flex: 1 }}>
-            <Button
-              icon={<MinusOutlined />}
-              onClick={() => setQuantity(product.id, quantityInCart - 1)}
-              aria-label={`Decrease quantity of ${product.name}`}
-            />
-            <Button className="product-card__qty" disabled>
-              {quantityInCart}
-            </Button>
-            <Button
-              icon={<PlusOutlined />}
-              onClick={() => setQuantity(product.id, quantityInCart + 1)}
-              aria-label={`Increase quantity of ${product.name}`}
-            />
-          </Space.Compact>
-        ) : (
-          <Button
-            type="primary"
-            icon={<ShoppingCartOutlined />}
-            style={{ flex: 1 }}
-            onClick={handleAddToCart}
-          >
-            Add to Cart
-          </Button>
-        )}
-        <Button
-          icon={<MessageOutlined />}
-          onClick={() => setOpen(true)}
-          aria-label={`Enquire about ${product.name}`}
-        />
-      </Space.Compact>
     </Card>
   );
 

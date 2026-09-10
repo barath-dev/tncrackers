@@ -116,7 +116,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         return {
           ...line,
           product,
-          image: category?.image ?? "/images/card/diwali-fireworks.jpg",
+          image: category?.image ?? "/images/card/sparklers.jpg",
           lineTotal: product.discountPrice * line.quantity,
           lineMrp: product.price * line.quantity,
         };

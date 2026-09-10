@@ -104,6 +104,15 @@ a {
   justify-content: center;
 }
 
+/* Menu item labels are <Link> anchors so Next.js can prefetch/navigate;
+   without this, the anchor's own link color wins over Ant Design's
+   selected/unselected item color, making inactive items (in
+   particular a submenu title, e.g. "Products") look permanently
+   "selected". Let the menu's own state-driven color show through. */
+.ant-menu a {
+  color: inherit;
+}
+
 .site-header__actions {
   flex-shrink: 0;
 }
@@ -284,25 +293,86 @@ a {
   transform: scale(1.03);
 }
 
+/* Corner "Add" pill / quantity stepper, overlaid on the product photo */
+.product-card__cta {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 2;
+}
+
+.add-pill {
+  min-width: 60px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-ember);
+  background: #fff;
+  color: var(--color-ember);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(23, 20, 28, 0.16);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.add-pill:hover {
+  background: var(--color-ember);
+  color: #fff;
+}
+
+.qty-pill {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--color-ember);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(23, 20, 28, 0.16);
+  overflow: hidden;
+}
+
+.qty-pill button {
+  width: 28px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.qty-pill button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.qty-pill span {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.product-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
 .product-card__price {
   display: flex;
   align-items: baseline;
   gap: 8px;
   flex-wrap: wrap;
+  margin-top: 4px;
 }
 
 .product-card__price del {
   color: var(--color-ash);
   font-size: 13px;
-}
-
-.product-card__qty {
-  min-width: 40px;
-  color: var(--color-ink) !important;
-  font-weight: 600;
-  cursor: default !important;
-  opacity: 1 !important;
-  pointer-events: none;
 }
 
 /* Quiet inline tag — replaces a diagonal ribbon badge on every card.

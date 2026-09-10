@@ -77,8 +77,8 @@ export const categories: Category[] = [
     description:
       "Traditional single-sound crackers, sized from starter packs to the bigger, deeper-toned varieties.",
     icon: SoundOutlined,
-    image: "/images/card/diwali-fireworks.jpg",
-    banner: "/images/wide/diwali-fireworks.jpg",
+    image: "/images/card/diwali-fire-crackers-1.jpg",
+    banner: "/images/wide/diwali-fire-crackers-1.jpg",
   },
   {
     slug: "sound-bombs",
@@ -87,8 +87,8 @@ export const categories: Category[] = [
     description:
       "Heavier-bodied crackers built for a louder, deeper report — popular for big festival moments.",
     icon: ThunderboltOutlined,
-    image: "/images/card/diwali-fireworks.jpg",
-    banner: "/images/wide/diwali-fireworks.jpg",
+    image: "/images/card/diwali-bangalore.jpg",
+    banner: "/images/wide/diwali-bangalore.jpg",
   },
   {
     slug: "chain-crackers",
@@ -97,8 +97,8 @@ export const categories: Category[] = [
     description:
       "Linked strings of small crackers that burst in a continuous chain — a traditional festival staple.",
     icon: LinkOutlined,
-    image: "/images/card/diwali-fireworks.jpg",
-    banner: "/images/wide/diwali-fireworks.jpg",
+    image: "/images/card/diwali-guntur.jpg",
+    banner: "/images/wide/diwali-guntur.jpg",
   },
   {
     slug: "electric-crackers",
@@ -107,8 +107,8 @@ export const categories: Category[] = [
     description:
       "Compact, rapid-fire crackers known for their sharp, quick snap — sold in convenient pack sizes.",
     icon: ThunderboltFilled,
-    image: "/images/card/diwali-fireworks.jpg",
-    banner: "/images/wide/diwali-fireworks.jpg",
+    image: "/images/card/diwali-vizag-2.jpg",
+    banner: "/images/wide/diwali-vizag-2.jpg",
   },
   {
     slug: "matchbox-crackers",
@@ -117,8 +117,8 @@ export const categories: Category[] = [
     description:
       "Neatly boxed assortments that bundle several small crackers together for easy gifting and use.",
     icon: AppstoreOutlined,
-    image: "/images/card/diwali-fireworks.jpg",
-    banner: "/images/wide/diwali-fireworks.jpg",
+    image: "/images/card/firecracker-shop.jpg",
+    banner: "/images/wide/firecracker-shop.jpg",
   },
   {
     slug: "pencil-crackers",
@@ -127,8 +127,8 @@ export const categories: Category[] = [
     description:
       "Slender ground-standing crackers that release a steady shower of sparks over several seconds.",
     icon: EditOutlined,
-    image: "/images/card/diwali-fireworks.jpg",
-    banner: "/images/wide/diwali-fireworks.jpg",
+    image: "/images/card/kolkata-market-01.jpg",
+    banner: "/images/wide/kolkata-market-01.jpg",
   },
   {
     slug: "multi-shot-cakes",
@@ -137,8 +137,8 @@ export const categories: Category[] = [
     description:
       "Pre-linked cakes that fire a sequence of aerial shots automatically — a compact fireworks display.",
     icon: ClusterOutlined,
-    image: "/images/card/aerial-burst-gold.jpg",
-    banner: "/images/wide/aerial-burst-gold.jpg",
+    image: "/images/card/kolkata-market-04.jpg",
+    banner: "/images/wide/kolkata-market-04.jpg",
   },
   {
     slug: "sky-shots",
@@ -167,8 +167,8 @@ export const categories: Category[] = [
     description:
       "Curated assortments spanning sound, light, and aerial crackers — built for a full evening of celebration.",
     icon: TeamOutlined,
-    image: "/images/card/aerial-burst-colour.jpg",
-    banner: "/images/wide/aerial-burst-colour.jpg",
+    image: "/images/card/kolkata-market-06.jpg",
+    banner: "/images/wide/kolkata-market-06.jpg",
   },
   {
     slug: "gift-combo-boxes",
@@ -177,8 +177,8 @@ export const categories: Category[] = [
     description:
       "Premium, gift-wrapped combo boxes that make it easy to send festive cheer to friends and family.",
     icon: GiftOutlined,
-    image: "/images/card/aerial-burst-colour.jpg",
-    banner: "/images/wide/aerial-burst-colour.jpg",
+    image: "/images/card/pathaka-shop-bhadrak.jpg",
+    banner: "/images/wide/pathaka-shop-bhadrak.jpg",
   },
 ];
 
