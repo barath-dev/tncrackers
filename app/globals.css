@@ -282,6 +282,15 @@ a {
   font-size: 13px;
 }
 
+.product-card__qty {
+  min-width: 40px;
+  color: #1a1015 !important;
+  font-weight: 600;
+  cursor: default !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
 /* Why choose us */
 .why-card {
   text-align: center;

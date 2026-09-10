@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { MessageOutlined, MinusOutlined, PlusOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { App, Badge, Button, Card, Modal, Space, Typography } from "antd";
 import Image from "next/image";
 import { useState } from "react";
@@ -17,8 +17,10 @@ export default function ProductCard({ product }: { product: Product }) {
     ((product.price - product.discountPrice) / product.price) * 100
   );
   const category = getCategoryBySlug(product.categorySlug);
-  const { addItem } = useCart();
+  const { lines, addItem, setQuantity } = useCart();
   const { message } = App.useApp();
+
+  const quantityInCart = lines.find((line) => line.productId === product.id)?.quantity ?? 0;
 
   const handleAddToCart = () => {
     addItem(product.id, 1);
@@ -57,14 +59,32 @@ export default function ProductCard({ product }: { product: Product }) {
         <del>₹{product.price}</del>
       </div>
       <Space.Compact block style={{ marginTop: 12 }}>
-        <Button
-          type="primary"
-          icon={<ShoppingCartOutlined />}
-          style={{ flex: 1 }}
-          onClick={handleAddToCart}
-        >
-          Add to Cart
-        </Button>
+        {quantityInCart > 0 ? (
+          <Space.Compact style={{ flex: 1 }}>
+            <Button
+              icon={<MinusOutlined />}
+              onClick={() => setQuantity(product.id, quantityInCart - 1)}
+              aria-label={`Decrease quantity of ${product.name}`}
+            />
+            <Button className="product-card__qty" disabled>
+              {quantityInCart}
+            </Button>
+            <Button
+              icon={<PlusOutlined />}
+              onClick={() => setQuantity(product.id, quantityInCart + 1)}
+              aria-label={`Increase quantity of ${product.name}`}
+            />
+          </Space.Compact>
+        ) : (
+          <Button
+            type="primary"
+            icon={<ShoppingCartOutlined />}
+            style={{ flex: 1 }}
+            onClick={handleAddToCart}
+          >
+            Add to Cart
+          </Button>
+        )}
         <Button
           icon={<MessageOutlined />}
           onClick={() => setOpen(true)}
