@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageOutlined, ShopOutlined } from "@ant-design/icons";
+import { CheckCircleFilled, MessageOutlined, ShopOutlined } from "@ant-design/icons";
 import { Button, Space, Typography } from "antd";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,6 +45,17 @@ export default function HeroSection() {
                 Send an Enquiry
               </Button>
             </Link>
+          </Space>
+          <Space size="large" wrap className="hero__trust">
+            <span>
+              <CheckCircleFilled /> Packed specially for you
+            </span>
+            <span>
+              <CheckCircleFilled /> Checked before every dispatch
+            </span>
+            <span>
+              <CheckCircleFilled /> Trusted by festival shoppers
+            </span>
           </Space>
         </div>
       </div>

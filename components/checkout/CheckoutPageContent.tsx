@@ -159,6 +159,12 @@ export default function CheckoutPageContent() {
                 <Button type="primary" htmlType="submit" size="large" block loading={submitting}>
                   Place Order · ₹{subtotal}
                 </Button>
+                <Text
+                  type="secondary"
+                  style={{ display: "block", textAlign: "center", fontSize: 12, marginTop: 8 }}
+                >
+                  🎁 Freshly checked and packed specially for you before dispatch
+                </Text>
               </Form.Item>
             </Form>
           </Card>

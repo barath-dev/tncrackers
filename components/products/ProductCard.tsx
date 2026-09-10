@@ -1,8 +1,9 @@
 "use client";
 
-import { MessageOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
+import { MessageOutlined, MinusOutlined, PlusOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import { App, Button, Card, Modal, Typography } from "antd";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { getCategoryBySlug } from "@/lib/data/categories";
 import type { Product } from "@/lib/data/products";
@@ -10,6 +11,20 @@ import { useCart } from "@/lib/cart/CartContext";
 import EnquiryForm from "@/components/contact/EnquiryForm";
 
 const { Text, Paragraph } = Typography;
+
+// A small rotating set of warm, personal lines — picked per product (not
+// random per render) so the same product always shows the same line.
+const TRUST_LINES = [
+  "Packed specially for you",
+  "Freshly prepared for your celebration",
+  "Checked and packed with care, just for you",
+  "Made ready specially for your order",
+];
+
+function trustLineFor(id: string) {
+  const index = id.split("").reduce((sum, ch) => sum + ch.charCodeAt(0), 0) % TRUST_LINES.length;
+  return TRUST_LINES[index];
+}
 
 export default function ProductCard({
   product,
@@ -26,12 +41,18 @@ export default function ProductCard({
   const category = getCategoryBySlug(product.categorySlug);
   const { lines, addItem, setQuantity } = useCart();
   const { message } = App.useApp();
+  const router = useRouter();
 
   const quantityInCart = lines.find((line) => line.productId === product.id)?.quantity ?? 0;
 
   const handleAddToCart = () => {
     addItem(product.id, 1);
     message.success(`Added "${product.name}" to cart`);
+  };
+
+  const handleBuyNow = () => {
+    if (quantityInCart === 0) addItem(product.id, 1);
+    router.push("/checkout");
   };
 
   const card = (
@@ -49,31 +70,6 @@ export default function ProductCard({
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           )}
-          <div className="product-card__cta">
-            {quantityInCart > 0 ? (
-              <div className="qty-pill">
-                <button
-                  type="button"
-                  onClick={() => setQuantity(product.id, quantityInCart - 1)}
-                  aria-label={`Decrease quantity of ${product.name}`}
-                >
-                  <MinusOutlined />
-                </button>
-                <span>{quantityInCart}</span>
-                <button
-                  type="button"
-                  onClick={() => setQuantity(product.id, quantityInCart + 1)}
-                  aria-label={`Increase quantity of ${product.name}`}
-                >
-                  <PlusOutlined />
-                </button>
-              </div>
-            ) : (
-              <button type="button" className="add-pill" onClick={handleAddToCart}>
-                Add
-              </button>
-            )}
-          </div>
         </div>
       }
     >
@@ -99,6 +95,36 @@ export default function ProductCard({
         ) : (
           <span className="tag tag--ember">{discountPercent}% off</span>
         )}
+      </div>
+      <Text type="secondary" className="product-card__trust">
+        🎁 {trustLineFor(product.id)}
+      </Text>
+
+      <div className="product-card__actions">
+        {quantityInCart > 0 ? (
+          <div className="qty-stepper">
+            <button
+              type="button"
+              onClick={() => setQuantity(product.id, quantityInCart - 1)}
+              aria-label={`Decrease quantity of ${product.name}`}
+            >
+              <MinusOutlined />
+            </button>
+            <span>{quantityInCart}</span>
+            <button
+              type="button"
+              onClick={() => setQuantity(product.id, quantityInCart + 1)}
+              aria-label={`Increase quantity of ${product.name}`}
+            >
+              <PlusOutlined />
+            </button>
+          </div>
+        ) : (
+          <Button onClick={handleAddToCart}>Add to Cart</Button>
+        )}
+        <Button type="primary" icon={<ThunderboltOutlined />} onClick={handleBuyNow}>
+          Buy Now
+        </Button>
       </div>
     </Card>
   );

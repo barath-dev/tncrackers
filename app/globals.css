@@ -188,6 +188,21 @@ a {
   max-width: 520px;
 }
 
+.hero__trust {
+  margin-top: 20px;
+}
+
+.hero__trust span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero__trust .anticon {
+  color: var(--color-brass);
+  margin-right: 4px;
+}
+
 @media (max-width: 780px) {
   .hero {
     min-height: 480px;
@@ -311,69 +326,6 @@ a {
   transform: scale(1.03);
 }
 
-/* Corner "Add" pill / quantity stepper, overlaid on the product photo */
-.product-card__cta {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  z-index: 2;
-}
-
-.add-pill {
-  min-width: 60px;
-  height: 30px;
-  padding: 0 12px;
-  border-radius: 8px;
-  border: 1px solid var(--color-ember);
-  background: #fff;
-  color: var(--color-ember);
-  font-weight: 700;
-  font-size: 13px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(46, 16, 101, 0.16);
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.add-pill:hover {
-  background: var(--color-ember);
-  color: #fff;
-}
-
-.qty-pill {
-  display: flex;
-  align-items: center;
-  height: 30px;
-  border-radius: 8px;
-  background: var(--color-ember);
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(46, 16, 101, 0.16);
-  overflow: hidden;
-}
-
-.qty-pill button {
-  width: 28px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  font-size: 11px;
-}
-
-.qty-pill button:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.qty-pill span {
-  min-width: 18px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 13px;
-}
-
 .product-card__head {
   display: flex;
   align-items: flex-start;
@@ -386,6 +338,60 @@ a {
   gap: 8px;
   flex-wrap: wrap;
   margin-top: 4px;
+}
+
+.product-card__trust {
+  display: block;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* Add to Cart / Buy Now — full-width, clearly visible actions */
+.product-card__actions {
+  display: flex;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.product-card__actions > .ant-btn {
+  flex: 1;
+}
+
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  height: 32px;
+  padding: 0 4px;
+  border-radius: 6px;
+  border: 1px solid var(--color-ember);
+  color: var(--color-ember);
+  font-weight: 700;
+}
+
+.qty-stepper button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.qty-stepper button:hover {
+  background: rgba(216, 67, 21, 0.1);
+}
+
+.qty-stepper span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 14px;
 }
 
 .product-card__price del {

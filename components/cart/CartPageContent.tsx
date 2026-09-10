@@ -115,6 +115,9 @@ export default function CartPageContent() {
                 Proceed to Checkout
               </Button>
             </Link>
+            <Text type="secondary" style={{ display: "block", textAlign: "center", fontSize: 12, marginTop: 8 }}>
+              🎁 Every order is checked and packed specially for you
+            </Text>
             <Link href="/products">
               <Button type="link" block style={{ marginTop: 4 }}>
                 Continue Shopping
