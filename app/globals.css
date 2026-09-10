@@ -3,18 +3,18 @@
   --font-body: var(--font-body, "Inter", sans-serif);
 
   /* Palette — mirrors the literal values in lib/theme.ts. Update both
-     places together. "The moment just after a shell bursts": an ink
-     night sky, one burnt-ember accent, a cooler afterglow violet, and
-     antique brass — not the usual bright red/gold festival-sale look. */
-  --color-ink: #17141c;
-  --color-ember: #b54b1f;
-  --color-ember-deep: #8f3814;
-  --color-plum: #5b3e6b;
-  --color-brass: #a9863c;
-  --color-parchment: #f3ebdd;
-  --color-parchment-line: #e4d7c2;
+     places together. Bright and festive: vivid orange, magenta-pink,
+     and gold against a deep vivid-purple night sky and a bright
+     warm-white background. */
+  --color-ink: #2e1065;
+  --color-ember: #d84315;
+  --color-ember-deep: #b23610;
+  --color-plum: #d6266f;
+  --color-brass: #c98a00;
+  --color-parchment: #fff9f2;
+  --color-parchment-line: #f2dfc0;
   --color-ash: #6b6058;
-  --color-success: #4b7a5b;
+  --color-success: #16a34a;
 }
 
 * {
@@ -168,10 +168,10 @@ a {
   z-index: 0;
   background: linear-gradient(
     100deg,
-    rgba(23, 20, 28, 0.94) 0%,
-    rgba(23, 20, 28, 0.8) 38%,
-    rgba(23, 20, 28, 0.4) 68%,
-    rgba(23, 20, 28, 0.18) 100%
+    rgba(46, 16, 101, 0.94) 0%,
+    rgba(46, 16, 101, 0.8) 38%,
+    rgba(46, 16, 101, 0.4) 68%,
+    rgba(46, 16, 101, 0.18) 100%
   );
 }
 
@@ -247,7 +247,7 @@ a {
 
 .category-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(23, 20, 28, 0.1);
+  box-shadow: 0 10px 20px rgba(46, 16, 101, 0.1);
 }
 
 .category-card__icon {
@@ -286,7 +286,7 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  box-shadow: 0 2px 6px rgba(23, 20, 28, 0.2);
+  box-shadow: 0 2px 6px rgba(46, 16, 101, 0.2);
 }
 
 /* Product card */
@@ -330,7 +330,7 @@ a {
   font-weight: 700;
   font-size: 13px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(23, 20, 28, 0.16);
+  box-shadow: 0 2px 6px rgba(46, 16, 101, 0.16);
   transition: background 0.15s ease, color 0.15s ease;
 }
 
@@ -346,7 +346,7 @@ a {
   border-radius: 8px;
   background: var(--color-ember);
   color: #fff;
-  box-shadow: 0 2px 6px rgba(23, 20, 28, 0.16);
+  box-shadow: 0 2px 6px rgba(46, 16, 101, 0.16);
   overflow: hidden;
 }
 
@@ -544,8 +544,8 @@ a {
   z-index: 0;
   background: linear-gradient(
     180deg,
-    rgba(23, 20, 28, 0.7) 0%,
-    rgba(23, 20, 28, 0.78) 100%
+    rgba(46, 16, 101, 0.7) 0%,
+    rgba(46, 16, 101, 0.78) 100%
   );
 }
 

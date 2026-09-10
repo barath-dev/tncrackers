@@ -3,22 +3,21 @@ import type { ThemeConfig } from "antd";
 export const siteName = "TNCrackers";
 
 /**
- * Core palette — drawn from the moment just after a shell bursts: an ink
- * night sky, one burnt-ember accent, and a cooler afterglow violet, with
- * antique brass and warm paper standing in for the usual bright red/gold
- * "festival sale" look. This is the single source of truth: the same hex
- * values are mirrored as CSS custom properties in app/globals.css.
+ * Core palette — bright and festive: vivid orange, magenta-pink, and gold
+ * against a deep vivid-purple night sky and a bright warm-white
+ * background. This is the single source of truth: the same hex values
+ * are mirrored as CSS custom properties in app/globals.css.
  */
 export const palette = {
-  ink: "#17141C", // night sky — footer, hero scrim, dark text
-  ember: "#B54B1F", // primary accent — CTAs, prices, links
-  emberDeep: "#8F3814", // ember hover/active
-  plum: "#5B3E6B", // secondary accent — used with intent, not decoration
-  brass: "#A9863C", // antique gold — fine dividers, small accents only
-  parchment: "#F3EBDD", // warm paper background
-  parchmentLine: "#E4D7C2", // hairlines/borders on parchment
+  ink: "#2E1065", // deep vivid purple night sky — footer, hero scrim
+  ember: "#D84315", // primary accent — CTAs, prices, links
+  emberDeep: "#B23610", // ember hover/active
+  plum: "#D6266F", // secondary accent — used with intent, not decoration
+  brass: "#C98A00", // vivid gold — fine dividers, small accents
+  parchment: "#FFF9F2", // bright warm-white background
+  parchmentLine: "#F2DFC0", // hairlines/borders on parchment
   ash: "#6B6058", // secondary text on light backgrounds
-  success: "#4B7A5B", // muted forest green — savings, confirmations
+  success: "#16A34A", // vivid green — savings, confirmations
 };
 
 export const theme: ThemeConfig = {
