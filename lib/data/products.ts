@@ -19,26 +19,26 @@ interface ProductSeed {
 const seedsByCategory: Record<string, ProductSeed[]> = {
   sparklers: [
     {
-      name: "10cm Colour Sparkler",
+      name: "10cm Kambi Mathappu",
       description: "Compact sparkler with a bright, colourful flame — a starter favourite.",
       price: 60,
       discountPrice: 48,
     },
     {
-      name: "15cm Electric Sparkler",
+      name: "15cm Electric Kambi Mathappu",
       description: "Crisp white light with a slightly longer burn time.",
       price: 90,
       discountPrice: 72,
     },
     {
-      name: "30cm Long Sparkler",
+      name: "30cm Long Kambi Mathappu",
       description: "Extended burn time for longer hand-held displays.",
       price: 160,
       discountPrice: 128,
       badge: "Bestseller",
     },
     {
-      name: "Green Fire Sparkler",
+      name: "Green Kambi Mathappu",
       description: "Tinted green flame for a distinct festive glow.",
       price: 140,
       discountPrice: 112,
@@ -46,26 +46,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "flower-pots": [
     {
-      name: "Classic Flower Pot",
+      name: "Classic Poothotti",
       description: "Steady fountain of golden sparks from a compact base.",
       price: 90,
       discountPrice: 72,
     },
     {
-      name: "Twin Colour Flower Pot",
+      name: "Twin Colour Poothotti",
       description: "Two-tone spray that shifts colour mid-burn.",
       price: 180,
       discountPrice: 144,
     },
     {
-      name: "Deluxe Ashoka Pot",
+      name: "Deluxe Ashoka Poothotti",
       description: "Taller flame with a wider, denser spray of colour.",
       price: 320,
       discountPrice: 256,
       badge: "Popular",
     },
     {
-      name: "Jumbo Fountain Pot",
+      name: "Jumbo Poothotti",
       description: "Our largest ground fountain, built for a longer show.",
       price: 650,
       discountPrice: 520,
@@ -73,25 +73,25 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "ground-spinners": [
     {
-      name: "Mini Ground Spinner",
+      name: "Mini Chakkaram",
       description: "Small spinning wheel, ideal for younger celebrants.",
       price: 70,
       discountPrice: 56,
     },
     {
-      name: "Wire Chakkar",
+      name: "Wire Chakkaram",
       description: "Classic wire-mounted spinner with a smooth, even spin.",
       price: 130,
       discountPrice: 104,
     },
     {
-      name: "Double Wheel Spinner",
+      name: "Double Chakkaram",
       description: "Two linked wheels for a wider ring of sparks.",
       price: 220,
       discountPrice: 176,
     },
     {
-      name: "Whistling Ground Spinner",
+      name: "Whistling Chakkaram",
       description: "Adds a gentle whistle to the classic spinning display.",
       price: 190,
       discountPrice: 152,
@@ -126,25 +126,25 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "sound-crackers": [
     {
-      name: "Junior Sound Cracker",
+      name: "Junior Lakshmi Vedi",
       description: "Small, friendly report — a good pick for young beginners.",
       price: 35,
       discountPrice: 28,
     },
     {
-      name: "Classic Sound Cracker",
+      name: "Classic Lakshmi Vedi",
       description: "The everyday cracker for a satisfying, familiar snap.",
       price: 70,
       discountPrice: 56,
     },
     {
-      name: "Grand Sound Cracker",
+      name: "Grand Lakshmi Vedi",
       description: "Bigger body for a fuller, rounder report.",
       price: 150,
       discountPrice: 120,
     },
     {
-      name: "Deluxe Sound Cracker",
+      name: "Deluxe Lakshmi Vedi",
       description: "Our loudest single-sound cracker in this range.",
       price: 260,
       discountPrice: 208,
@@ -153,26 +153,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "sound-bombs": [
     {
-      name: "Twin Sound Bomb",
+      name: "Twin Atom Bomb",
       description: "Two closely-timed reports from a single unit.",
       price: 180,
       discountPrice: 144,
     },
     {
-      name: "Classic Bomb",
+      name: "Classic Atom Bomb",
       description: "A dependable, deep-toned celebration bomb.",
       price: 260,
       discountPrice: 208,
     },
     {
-      name: "Heavy Report Bomb",
+      name: "Heavy Report Atom Bomb",
       description: "Denser build for a heavier, more resonant burst.",
       price: 420,
       discountPrice: 336,
       badge: "Bestseller",
     },
     {
-      name: "Signature Bomb",
+      name: "Signature Atom Bomb",
       description: "Our premium bomb, tuned for maximum depth of sound.",
       price: 700,
       discountPrice: 560,
@@ -180,25 +180,25 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "chain-crackers": [
     {
-      name: "50-Wala Chain",
+      name: "50 Wala Maalai",
       description: "A short chain of 50 linked crackers — quick and simple.",
       price: 130,
       discountPrice: 104,
     },
     {
-      name: "100-Wala Chain",
+      name: "100 Wala Maalai",
       description: "A full-minute chain of continuous small bursts.",
       price: 230,
       discountPrice: 184,
     },
     {
-      name: "200-Wala Chain",
+      name: "200 Wala Maalai",
       description: "Extended chain for a longer, uninterrupted display.",
       price: 420,
       discountPrice: 336,
     },
     {
-      name: "500-Wala Chain",
+      name: "500 Wala Maalai",
       description: "Our longest chain, built for larger gatherings.",
       price: 950,
       discountPrice: 760,
@@ -207,25 +207,25 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "electric-crackers": [
     {
-      name: "Electric Snap 50s",
+      name: "Bijili 50",
       description: "Fifty rapid-fire snaps in a tidy, compact pack.",
       price: 90,
       discountPrice: 72,
     },
     {
-      name: "Electric Snap 100s",
+      name: "Bijili 100",
       description: "Twice the count for a longer rapid-fire run.",
       price: 170,
       discountPrice: 136,
     },
     {
-      name: "Striped Electric Pack",
+      name: "Striped Bijili",
       description: "A sharper, crisper snap with every burst.",
       price: 150,
       discountPrice: 120,
     },
     {
-      name: "Rapid Electric Pack",
+      name: "Rapid Bijili",
       description: "Our fastest-firing electric pack.",
       price: 210,
       discountPrice: 168,
@@ -233,26 +233,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "matchbox-crackers": [
     {
-      name: "Mini Matchbox Pack",
+      name: "Mini Petti Vedi",
       description: "A pocket-sized assortment for quick celebrations.",
       price: 90,
       discountPrice: 72,
     },
     {
-      name: "Classic Matchbox Pack",
+      name: "Classic Petti Vedi",
       description: "A balanced mix of small crackers in one neat box.",
       price: 160,
       discountPrice: 128,
     },
     {
-      name: "Deluxe Matchbox Set",
+      name: "Deluxe Petti Vedi",
       description: "A wider variety, packed into a sturdier box.",
       price: 320,
       discountPrice: 256,
       badge: "Bestseller",
     },
     {
-      name: "Premium Matchbox Set",
+      name: "Premium Petti Vedi",
       description: "Our top matchbox assortment, built for gifting.",
       price: 480,
       discountPrice: 384,
@@ -260,26 +260,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "pencil-crackers": [
     {
-      name: "Standard Pencil Cracker",
+      name: "Standard Pencil Vedi",
       description: "A slim, ground-standing cracker with a steady spark.",
       price: 200,
       discountPrice: 160,
     },
     {
-      name: "Long Burn Pencil",
+      name: "Long Burn Pencil Vedi",
       description: "A longer body for an extended shower of sparks.",
       price: 320,
       discountPrice: 256,
     },
     {
-      name: "Jolly Time Pencil",
+      name: "Jolly Time Pencil Vedi",
       description: "A cheerful, family-favourite pencil cracker.",
       price: 280,
       discountPrice: 224,
       badge: "Popular",
     },
     {
-      name: "Colour Burst Pencil",
+      name: "Colour Burst Pencil Vedi",
       description: "Adds a tint of colour to the classic spark shower.",
       price: 340,
       discountPrice: 272,
@@ -314,26 +314,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "sky-shots": [
     {
-      name: "2-inch Sky Shell",
+      name: "2-inch Vaan Vedi",
       description: "A modest shell that opens into a golden canopy.",
       price: 130,
       discountPrice: 104,
     },
     {
-      name: "3-inch Sky Shell",
+      name: "3-inch Vaan Vedi",
       description: "A wider burst with a longer glitter trail.",
       price: 340,
       discountPrice: 272,
     },
     {
-      name: "5-inch Sky Shell",
+      name: "5-inch Vaan Vedi",
       description: "A tall, dramatic shell for the main event.",
       price: 620,
       discountPrice: 496,
       badge: "Popular",
     },
     {
-      name: "8-inch Grand Shell",
+      name: "8-inch Grand Vaan Vedi",
       description: "Our largest single shell, reserved for finales.",
       price: 980,
       discountPrice: 784,
@@ -341,26 +341,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "colour-sky-shots": [
     {
-      name: "Pink Sky Hitter",
+      name: "Pink Vaan Vedi",
       description: "A rising shell that opens in vivid pink.",
       price: 560,
       discountPrice: 448,
     },
     {
-      name: "Blue Sky Hitter",
+      name: "Blue Vaan Vedi",
       description: "The same rise, finished in a deep blue bloom.",
       price: 560,
       discountPrice: 448,
     },
     {
-      name: "Tri-Colour Sky Burst",
+      name: "Tri-Colour Vaan Vedi",
       description: "Three colours layered into a single aerial burst.",
       price: 720,
       discountPrice: 576,
       badge: "Bestseller",
     },
     {
-      name: "Rainbow Sky Burst",
+      name: "Rainbow Vaan Vedi",
       description: "Our most colourful aerial shell, for a signature finale.",
       price: 890,
       discountPrice: 712,
@@ -368,26 +368,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "family-combo-packs": [
     {
-      name: "Starter Family Pack",
+      name: "Starter Kudumba Combo",
       description: "A light mix for smaller family gatherings.",
       price: 900,
       discountPrice: 720,
     },
     {
-      name: "Classic Family Pack",
+      name: "Classic Kudumba Combo",
       description: "Our most balanced combo across sound, light, and sky.",
       price: 1600,
       discountPrice: 1280,
       badge: "Bestseller",
     },
     {
-      name: "Grand Family Pack",
+      name: "Grand Kudumba Combo",
       description: "A bigger assortment for an evening-long celebration.",
       price: 2600,
       discountPrice: 2080,
     },
     {
-      name: "Ultimate Family Pack",
+      name: "Ultimate Kudumba Combo",
       description: "Our most complete family combo, top to bottom.",
       price: 4200,
       discountPrice: 3360,
@@ -395,26 +395,26 @@ const seedsByCategory: Record<string, ProductSeed[]> = {
   ],
   "gift-combo-boxes": [
     {
-      name: "Festive Gift Box — Small",
+      name: "Parisu Petti — Small",
       description: "A neatly wrapped starter assortment, ready to gift.",
       price: 750,
       discountPrice: 600,
     },
     {
-      name: "Festive Gift Box — Medium",
+      name: "Parisu Petti — Medium",
       description: "A fuller assortment in a decorated gift box.",
       price: 1400,
       discountPrice: 1120,
       badge: "Popular",
     },
     {
-      name: "Festive Gift Box — Large",
+      name: "Parisu Petti — Large",
       description: "Our most generous gift box, for larger celebrations.",
       price: 2400,
       discountPrice: 1920,
     },
     {
-      name: "Premium Celebration Box",
+      name: "Premium Parisu Petti",
       description: "A curated, premium selection in a keepsake box.",
       price: 3800,
       discountPrice: 3040,
