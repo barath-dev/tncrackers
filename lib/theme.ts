@@ -1,6 +1,6 @@
 import type { ThemeConfig } from "antd";
 
-export const siteName = "TNCrackers";
+export const siteName = "Digeesh Crackers";
 
 /**
  * Core palette — bright and festive: vivid orange, magenta-pink, and gold
@@ -54,9 +54,9 @@ export const theme: ThemeConfig = {
 };
 
 export const contactDetails = {
-  phonePrimary: "+91 97878 75717",
-  email: "barathwaj1153@gmail.com",
-  whatsapp: "+91 97878 75717",
+  phonePrimary: "+91 90081 19451",
+  email: "digeeshcrackers@gmail.com",
+  whatsapp: "+91 90081 19451",
   address: "Fireworks Market Road, Sivakasi, Virudhunagar District, Tamil Nadu, India",
   hours: "Mon–Sat · 9:00 AM – 5:00 PM",
 };

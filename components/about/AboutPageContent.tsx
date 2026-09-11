@@ -11,7 +11,7 @@ const highlights = [
     icon: <TeamOutlined />,
     title: "Family-Run Catalogue",
     description:
-      "TNCrackers started as a small family effort to make festival shopping simpler, and has grown into a full seasonal catalogue.",
+      "Digeesh Crackers started as a small family effort to make festival shopping simpler, and has grown into a full seasonal catalogue.",
   },
   {
     icon: <SafetyCertificateOutlined />,

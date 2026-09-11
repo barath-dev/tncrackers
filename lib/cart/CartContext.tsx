@@ -38,7 +38,7 @@ interface CartContextValue {
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
 
-const STORAGE_KEY = "tncrackers-cart";
+const STORAGE_KEY = "digeesh-crackers-cart";
 
 function readStoredCart(): CartLine[] {
   if (typeof window === "undefined") return [];

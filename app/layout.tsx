@@ -24,7 +24,7 @@ const body = Inter({
 export const metadata: Metadata = {
   title: `${siteName} — Festival Fireworks Catalogue`,
   description:
-    "Browse sparklers, ground spinners, aerial rockets, and combo packs from TNCrackers — a professional online fireworks catalogue.",
+    "Browse sparklers, ground spinners, aerial rockets, and combo packs from Digeesh Crackers — a professional online fireworks catalogue.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

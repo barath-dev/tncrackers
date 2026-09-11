@@ -31,7 +31,7 @@ interface CheckoutValues {
 }
 
 function generateOrderId() {
-  return `TNC-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
+  return `DC-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
 }
 
 export default function CheckoutPageContent() {

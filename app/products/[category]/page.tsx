@@ -23,11 +23,11 @@ export async function generateMetadata(
   const category = getCategoryBySlug(slug);
 
   if (!category) {
-    return { title: "Category not found — TNCrackers" };
+    return { title: "Category not found — Digeesh Crackers" };
   }
 
   return {
-    title: `${category.name} — TNCrackers`,
+    title: `${category.name} — Digeesh Crackers`,
     description: category.description,
   };
 }

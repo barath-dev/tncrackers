@@ -1,4 +1,4 @@
-# TNCrackers
+# Digeesh Crackers
 
 A professional, frontend-only portfolio site for a festival fireworks
 catalogue, built with **Next.js (App Router)**, **TypeScript**, and
